@@ -6,7 +6,7 @@ global.jwtsecret = process.env.jwtsecret || process.env.npm_package_config_jwtse
 global.coresecuritytoken= process.env.coresecuritytoken || process.env.npm_package_config_coresecuritytoken;
 global.nlusecuritytoken= process.env.nlusecuritytoken || process.env.npm_package_config_nlusecuritytoken;
 global.cacheagents= process.env.cacheagents || process.env.npm_package_config_cacheagents;
-global.port= process.env.port || process.env.npm_package_config_port;
+global.http_port= process.env.PORT || process.env.npm_package_config_port;
 
 var express = require('express');
 var proxy = require('http-proxy-middleware');
@@ -101,8 +101,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var listener = server.listen(global.port, function () {
-  console.log('Express server listening on port ' + global.port);
+var listener = server.listen(global.http_port, function () {
+  console.log('Express server listening on port ' + global.http_port);
 });
 
 checkRasaUI();
