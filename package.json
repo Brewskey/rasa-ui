@@ -38,8 +38,8 @@
     "socket.io": "^2.0.4"
   },
   "config": {
-    "rasanluendpoint": "http://localhost:5000",
-    "rasacoreendpoint": "http://localhost:5005",
+    "rasanluendpoint": "https://chatbot-rasa-nlu.azurewebsites.net",
+    "rasacoreendpoint": "https://chatbot-rasa-core.azurewebsites.net",
     "coresecuritytoken": "",
     "nlusecuritytoken": "",
     "cacheagents": false,
