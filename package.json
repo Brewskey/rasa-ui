@@ -38,6 +38,7 @@
     "socket.io": "^2.0.4"
   },
   "config": {
+    "port": 5001,
     "rasanluendpoint": "http://localhost:5000",
     "rasacoreendpoint": "http://localhost:5005",
     "coresecuritytoken": "",
