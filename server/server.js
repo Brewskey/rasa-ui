@@ -28,8 +28,8 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(bodyParser.json({ limit: '2mb' }));
 /** Serve static files for UI website on root / */
-app.use('/', express.static('web/src/'));
-app.use('/scripts', express.static('node_modules/'));
+app.use('/', express.static(path.join(__dirname, '../web/src/')));
+app.use('/scripts', express.static(path.join(__dirname, '../node_modules/')));
 
 // route middleware to verify a token
 app.use(function(req, res, next) {
