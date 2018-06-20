@@ -2,7 +2,6 @@ var jwt = require('jsonwebtoken');
 const db = require('../db/db');
 
 function authenticateUser(req, res, next) {
-  try {
   //authenticate user
   console.log("Authenticate User", global);
   if(req.body.username =='admin' && req.body.password=='admin'){
@@ -19,10 +18,6 @@ function authenticateUser(req, res, next) {
         success: false,
         message: 'Username and password didnt match.'
     });
-  }
-  } catch (ex) {
-    console.error(ex);
-    throw ex;
   }
 }
 
