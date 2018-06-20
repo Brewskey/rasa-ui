@@ -8,6 +8,7 @@ global.nlusecuritytoken= process.env.nlusecuritytoken || process.env.npm_package
 global.cacheagents= process.env.cacheagents || process.env.npm_package_config_cacheagents;
 global.http_port= process.env.port || process.env.npm_package_config_port;
 
+var path = require('path');
 var express = require('express');
 var proxy = require('http-proxy-middleware');
 var bodyParser = require('body-parser');
