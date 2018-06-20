@@ -2,15 +2,15 @@ var jwt = require('jsonwebtoken');
 const db = require('../db/db');
 
 function authenticateUser(req, res, next) {
+  try {
   //authenticate user
-  console.log("Authenticate User");
+  console.log("Authenticate User", global);
   if(req.body.username =='admin' && req.body.password=='admin'){
     //create token and send it back
     var tokenData = {username:'admin',name: 'Portal Administrator'};
     // if user is found and password is right
     // create a token
     var token = jwt.sign(tokenData, global.jwtsecret);
-    console.log('Foobar');
     // return the information including token as JSON
     res.json({username: 'admin',token: token});
   }else{
@@ -19,6 +19,10 @@ function authenticateUser(req, res, next) {
         success: false,
         message: 'Username and password didnt match.'
     });
+  }
+  } catch (ex) {
+    console.error(ex);
+    throw ex;
   }
 }
 
