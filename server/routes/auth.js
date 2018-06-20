@@ -3,12 +3,13 @@ const db = require('../db/db');
 
 function authenticateUser(req, res, next) {
   //authenticate user
-  console.log("Authenticate User");
+  console.log("Authenticate User", JSON.stringify(req));
   if(req.body.username =='admin' && req.body.password=='admin'){
     //create token and send it back
     var tokenData = {username:'admin',name: 'Portal Administrator'};
     // if user is found and password is right
     // create a token
+    console.log('Foobar');
     var token = jwt.sign(tokenData, global.jwtsecret);
     // return the information including token as JSON
     res.json({username: 'admin',token: token});
